@@ -1,0 +1,1359 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de Computadoras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #800000;
+            color: rgba(255, 255, 255, 0.918);
+            padding: 10px;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            width: 60px;
+        }
+        .logo.left {
+            left: 20px;
+        }
+        .logo.right {
+            right: 20px;
+        }
+        h1, h2 {
+            color: #1a1a1a;
+        }
+        .container {
+            margin: 20px;
+        }
+        .image {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .description {
+            text-align: justify;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #800000;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #5a0000;
+        }
+        h3{text-align: center;}
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo_TECNM.png" alt="Logo TECNM" class="logo left">
+    <h3>Tecnológico Nacional De México <br> Instituto Tecnológico de Saltillo</h3> 
+    <img src="Escudo ITS.png" alt="Escudo ITS" class="logo right">
+</header>
+<hr width="100%" size="15" color="#060270">
+<div class="description">
+    <p>MATERIA: Arquitectura de Computadoras</p>
+    <p>DOCENTE: Maldonado Leza Miguel</p>
+    <p>ALUMNO: Claudio Gabriel Lopez Cuellar</p>
+    <p>NUM. DE CONTROL: 2305995</p>
+    
+     <h3>Temario</h3>
+    <ul>
+        <b><a href="#u1" style="color: black;">Unidad 1</a></b>
+        <li>1.1 Modelos de Arquitectura de Computo</li>
+        <li>1.1.1 Clasicas</li>
+        <li>1.1.2 Segmentadas</li>
+        <li>1.1.3 De Multiprocesamiento</li>
+        <li>1.2 Analisis de las computadoras</li>
+        <li>1.2.1 Arquitecturas</li>
+        <li>1.2.1.1 Unidad Central de Procesamiento</li>
+        <li>1.2.1.2 Unidad Aritmetica Lógica</li>
+        <li>1.2.1.3 Registros</li>
+        <li>1.2.1.4 Buses</li>
+        <li>1.2.2 Memoria</li>
+        <li>1.2.2.1 Conceptos Basicos del manejo de memoria</li>
+        <li>1.2.2.2 Memoria Principal</li>
+        <li>1.2.2.3 Memoria Caché</li>
+        <li>1.2.3 Manejo de la Entrada/Salida</li>
+        <li>1.2.3.1 Modulos de Entrada/Salida</li>
+        <li>1.2.3.2 Entrada/Salida Programada</li>
+        <li>1.2.3.3 Entrada/Salida mediante interrupciones</li>
+        <li>1.2.3.4 Acceso directo a Memoria</li>
+        <li>1.2.3.5 Canales y Procesadores Entrada/Salida</li>
+        <li>1.2.4 Buses</li>
+        <li>1.2.4.1 Tipos de Buses</li>
+        <li>1.2.4.2 Estructura de los Buses</li>
+        <li>1.2.3.4 Jerarquias de los Buses</li>
+        <li>1.2.5 interrupciones</li>
+        <br><b><a href="#u2" style="color: black;">Unidad 2 </a></b>
+        <li>2.1 Organizacion del Procesador</li>
+        <li>2.2 Estructura de Registros</li>
+        <li>2.2.1 Registros Visibles para el usuario</li>
+        <li>2.2.2 Registros de Control y Estados</li>
+        <li>2.2.3 Ejemplos de registros de CPU reales</li>
+        <li>2.3 El ciclo de instruccion</li>
+        <li>2.3.1 Ciclo Fetch-Decode-Execute</li>
+        <li>2.3.2 Segmentacion de Instrucciones: Caracteristicas y Funciones</li>
+        <li>2.3.4 Modos de direccionamiento</li>
+        <li>2.4 Casos de Estudio de CPU reales</li>
+        <br><b><a href="#u3" style="color: black;">Unidad 3</a></b>
+        <li>3.1 Chip Set</li>
+        <li>3.1.1 Unidad Central de Procesamiento</li>
+        <li>3.1.2 Control del Bus</li>
+        <li>3.1.3 Puentes de Entrada/Salida E/S</li>
+        <li>3.1.4 Controlador de interrupciones</li>
+        <li>3.1.5 Controlador de Acceso Directo o Memoria (DMA) </li>
+        <li>3.1.6 Circuitos de Temporización</li>
+        <li>3.1.7 Circuitos de Control</li>
+        <li>3.1.8 Controladores de Video</li>
+        <li>3.2 Aplicaciones</li>
+        <li>3.2.1 Entrada/Salida</li>
+        <li>3.2.2 Almacenamiento</li>
+        <li>3.2.3 Fuentes de Alimentación</li>
+        <li>3.3 Ambientes de Servicio</li>
+        <li>3.3.1 Negocios</li>
+        <li>3.3.2 Industria</li>
+        <li>3.3.3 Comercio Electronico</li>
+        <br><b><a href="#u4" style="color: black;">Unidad 4: Procesamientos Paralelos</a></b>
+        <li>4.1 Aspectos Basicos de la computación paralela</li>
+        <li>4.2 Tipos de Computacion Paralela</li>
+        <li>4.2.1 Clasificación</li>
+        <li>4.2.2 Arquitectura de computadoras secuenciales</li>
+        <li>4.2.3 Organización de direcciones de memoria</li>
+        <li>4.3 Sistemas de Memoria Compartida</li>
+        <li>4.3.1 Redes de medio compartido</li>
+        <li>4.3.2 Redes Conmutadas</li>
+        <li>4.4 Sistemas de Memoria Construida</li>
+        <li>4.5 Casos de Estudio</li>
+    </ul>
+    
+</div>
+<hr width="100%" size="5" color="#060270">
+<center><h1 id="u1">UNIDAD 1</h1></center>
+    <h2>1.2 Análisis de componentes</h2>
+        <p>El análisis de componentes es esencial para comprender cómo funcionan y se interconectan los diferentes elementos de un sistema operativo.</p>
+        <p>Esto incluye la Unidad Central de Procesamiento (CPU), la memoria (RAM, ROM, cache), los dispositivos de almacenamiento (HDD, SSD) y los dispositivos de entrada/salida. El análisis también abarca la evaluación del rendimiento, la eficiencia energética y el modelado y simulación de los componentes.</p>
+
+        <h3>Componentes principales</h3>
+        
+        <h4>Placa Madre (Motherboard)</h4>
+        <p>La placa madre es el componente principal que interconecta todos los demás componentes de la computadora.que permiten la comunicación entre los diferentes componentes.Acúa como una plataforma para la instalación de la CPU, la RAM, las tarjetas de expansión y otros periféricos.</p>
+
+        <h4>Unidad Central de Procesamiento (CPU)</h4>
+        <p>La CPU se encarga de ejecutar instrucciones y procesar datos compuesto por Unidad de Control (CU) que es la que coordina las operaciones de la computadora dirigiendo el flujo de datos entre los diferentes componentes.</p>
+
+        <h4>Memoria RAM (Random Access Memory)</h4>
+        <p>Almacena datos y programas que están en uso en un momento dado, es una memoria volátil, lo que significa que los datos se pierden cuando la computadora se apaga.</p>
+
+        <h4>Corriente de Energía (Power Supply)</h4>
+        <p>La fuente de alimentación (PSU) proporciona la energía necesaria para que todos los componentes de la computadora funcionen.Regula y distribuye la energía de manera eficiente a la placa madre, la CPU, la memoria y otros periféricos.</p>
+
+        <h3>1.2.1 Arquitecturas</h3>
+        <p>Las arquitecturas de computadoras se refiere al diseño y organización de los componentes fundamentales de un sistema informático. Este campo abarca tanto el hardware como el software, y es esencial para determinar el rendimiento, la eficiencia y la capacidad de una computadora para realizar tareas específicas.</p>
+
+        <h4>Arquitecturas importantes</h4>
+        <ol>
+            <p>Arquitectura von Neumann</p>
+            <p>Arquitectura Harvard</p>
+            <p>Arquitectura CISC (Complex Instruction Set Computing)</p>
+            <p>Arquitectura RISC (Reduced Instruction Set Computing)</p>
+            <p>Arquitecturas Híbridas</p>
+            <p>Arquitectura SIMD (Single Instruction, Multiple Data)</p>
+            <p>Arquitectura MIMD (Multiple Instruction, Multiple Data)</p>
+            <p>Arquitectura Multinúcleo</p>
+            <p>Arquitectura de Computación Cuántica</p>
+            <p>Arquitectura Neuromórfica</p>
+        </ol>
+
+        <h3>Unidad Central de Procesamiento</h3>
+        <p><b>Definición:</b> Es el "cerebro" de la computadora, encargado de ejecutar instrucciones y procesar datos.</p>
+        <ul>
+            <li><b>Componentes</b>
+                <ul>
+                    <li>Unidad de Control (CU): Coordina y gestiona la ejecución de instrucciones.</li>
+                    <li>Unidad Aritmética Lógica (ALU): Realiza cálculos matemáticos y operaciones lógicas.</li>
+                    <li>Registros: Almacenan datos temporalmente para procesarlos rápidamente.</li>
+                    <li>Buses: Transportan datos entre la CPU, memoria y otros dispositivos.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Unidad Aritmética Lógica (ALU)</h4>
+        <p><b>Definición:</b> Es el componente de la CPU encargado de realizar operaciones matemáticas y lógicas.</p>
+        <p><b>Funciones principales:</b></p>
+        <ul>
+            <li>Operaciones aritméticas: Suma, resta, multiplicación y división.</li>
+            <li>Operaciones lógicas: AND, OR, NOT, XOR.</li>
+            <li>Comparaciones: Mayor que, menor que, igual.</li>
+            <li>Desplazamientos de bits: Movimientos a la izquierda o derecha en registros.</li>
+        </ul>
+
+        <h4>1.2.1.3 Registros</h4>
+        <p>En el contexto de arquitecturas de computadoras, el término "Registros" se refiere a pequeños espacios de almacenamiento dentro del procesador o CPU (Unidad Central de Procesamiento). Estos son de acceso extremadamente rápido, mucho más rápido que la memoria principal (RAM), y se utilizan para almacenar datos y resultados intermedios durante el procesamiento de instrucciones.</p>
+
+        <h5>Función de los Registros en la Arquitectura de Computadoras:</h5>
+        <p><b>Los registros tienen varias funciones en el ámbito de la arquitectura de computadoras, tales como:</b></p>
+        <ul>
+            <li><b>Almacenamiento Temporal:</b> Los registros almacenan datos temporales que están siendo procesados por la CPU, como operandos, direcciones de memoria y resultados intermedios. Este almacenamiento rápido es crucial para la ejecución de instrucciones.</li>
+            <li><b>Control de Flujo:</b> Algunos registros están dedicados a controlar el flujo de ejecución, como el contador de programa (PC, Program Counter), que mantiene la dirección de la siguiente instrucción que se debe ejecutar.</li>
+            <li><b>Optimización del Rendimiento:</b> Dado que los registros están directamente integrados en el procesador, las operaciones que involucran registros son mucho más rápidas que aquellas que requieren acceso a la memoria principal.</li>
+            <li><b>Operaciones Matemáticas y Lógicas:</b> En las operaciones aritméticas o lógicas, los registros mantienen los valores de entrada y salida. Por ejemplo, en una suma, los operandos y el resultado pueden almacenarse en registros.</li>
+        </ul>
+
+        <h5>Tipos Comunes de Registros:</h5>
+        <p>Existen varios tipos de registros en una arquitectura de computadora, algunos de los más comunes incluyen:</p>
+        <ol>
+            <li><b>Registros de Datos:</b> Almacenan los datos que están siendo procesados o manipulados. Pueden ser utilizados para guardar operandos en una operación aritmética.</li>
+            <li><b>Registros de Dirección:</b> Almacenan direcciones de memoria, como las direcciones de los operandos o la siguiente instrucción a ejecutar.</li>
+            <li><b>Registros de Propósito General:</b> Son registros que pueden ser utilizados por las instrucciones de la CPU para almacenar cualquier dato o dirección. Por lo general, son accesibles para la mayoría de las instrucciones.</li>
+            <li><b>Registros de Propósito Especial:</b> Estos incluyen registros específicos para el control del flujo, como el contador de programa (PC), el registro de estado (PSW), y el registro de instrucciones (IR).</li>
+            <li><b>Registros de Estado (Flags):</b> Estos registros almacenan indicadores de estado que muestran el resultado de las operaciones realizadas (por ejemplo, si ocurrió un desbordamiento, si un resultado es cero, o si se produjo un error de signo).</li>
+        </ol>
+
+        <h4>1.2.1.4 Buses</h4>
+        <p>Un bus es un conjunto de líneas de comunicación o conductores que permiten la transferencia de datos y señales entre diferentes componentes de la computadora. Los buses son fundamentales porque facilitan la comunicación entre la CPU, la memoria, y otros periféricos, como los dispositivos de entrada/salida.</p>
+
+        <h5>Características Importantes de los Buses:</h5>
+        <ul>
+            <li><b>Velocidad de Transferencia:</b> La velocidad de los buses es crucial para el rendimiento general del sistema. Un bus más rápido permite una mayor cantidad de datos para ser transferidos en menos tiempo, lo que puede mejorar el rendimiento de la CPU.</li>
+            <li><b>Ancho del Bus:</b> El número de líneas en cada tipo de bus es importante. Cuanto mayor sea el ancho del bus, más datos se pueden transferir simultáneamente. Un bus de 64 bits, por ejemplo, puede transferir más datos en cada ciclo de reloj que un bus de 32 bits.</li>
+            <li><b>Sincronización:</b> Los buses generalmente se sincronizan con el reloj del sistema. Esto asegura que todas las transferencias de datos y señales se realicen de manera ordenada y en el momento correcto.</li>
+        </ul>
+
+        <h5>Función de los Buses en una Computadora:</h5>
+        <ol>
+            <li><b>Transferencia de Datos:</b> Los buses permiten la transferencia de datos entre la CPU, la memoria y los dispositivos periféricos. Esto incluye datos que van de la memoria a la CPU para ser procesados o desde la CPU a los dispositivos de salida.</li>
+            <li><b>Dirección y Control:</b> Los buses también transmiten señales de control (por ejemplo, cuándo leer o escribir datos) y direcciones de memoria (para indicar qué ubicación de memoria debe ser accedida).</li>
+        </ol>
+
+        <h4>Memoria Principal</h4>
+        <p>La memoria principal es la encargada de almacenar temporalmente los datos e instrucciones que la CPU necesita para ejecutar programas. Es fundamental para el rendimiento del sistema.</p>
+
+        <h5>Tipos de Memoria Principal</h5>
+        <ul>
+            <li><b>RAM (Random Access Memory)</b>
+                <ul>
+                    <li>Almacena datos e instrucciones temporalmente.</li>
+                    <li>Es volátil.</li>
+                    <li>Permite acceso rápido a la CPU.</li>
+                    <li>Tipos de RAM:
+                        <ul>
+                            <li>DRAM (Dynamic RAM): Necesita ser refrescada constantemente.</li>
+                            <li>SRAM (Static RAM): Más rápida y cara, usada en caché.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>ROM (Read-Only Memory)</b>
+                <ul>
+                    <li>Contiene instrucciones esenciales, como el firmware del sistema.</li>
+                    <li>No volátil.</li>
+                    <li>No se puede modificar fácilmente.</li>
+                    <li>Tipos de ROM:
+                        <ul>
+                            <li>PROM (Programmable ROM)</li>
+                            <li>EPROM (Erasable Programmable ROM)</li>
+                            <li>EEPROM (Electrically Erasable Programmable ROM)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Memoria en los Sistemas de Computación</h4>
+        <p>La memoria es un componente fundamental de cualquier sistema informático, ya que almacena y recupera datos e instrucciones necesarias para la ejecución de procesos. Se clasifica en varios tipos según su función, velocidad y volatilidad.</p>
+
+        <h5>Clasificación de la Memoria</h5>
+        <p><b>Memoria Volátil:</b> Pierde su contenido cuando se apaga el equipo.</p>
+        <ul>
+            <li>Memoria RAM (Random Access Memory)</li>
+            <li>Memoria Caché</li>
+            <li>Registros del procesador</li>
+        </ul>
+
+        <p><b>Memoria No Volátil:</b> Retiene los datos incluso sin energía.</p>
+        <ul>
+            <li>Memoria ROM (Read-Only Memory)</li>
+            <li>Dispositivos de almacenamiento (SSD, HDD, USB, SD)</li>
+            <li>Memoria Flash</li>
+        </ul>
+
+        <h4>Diferencias Entre Memoria Principal y Memoria Secundaria</h4>
+        <table border="1" width="100%">
+            <tr>
+                <th>Característica</th>
+                <th>Memoria Principal (RAM/ROM)</th>
+                <th>Memoria Secundaria (HDD/SSD)</th>
+            </tr>
+            <tr>
+                <td>Velocidad</td>
+                <td>Alta</td>
+                <td>Baja</td>
+            </tr>
+            <tr>
+                <td>Volatilidad</td>
+                <td>RAM: Sí, ROM: No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Capacidad</td>
+                <td>Limitada</td>
+                <td>Mayor</td>
+            </tr>
+            <tr>
+                <td>Función</td>
+                <td>Almacenamiento temporal</td>
+                <td>Almacenamiento permanente</td>
+            </tr>
+        </table>
+
+        <h4>CONCEPTOS BASICOS DEL MANEJO DE MEMORIA</h4>
+
+        <h5>1. TIPOS DE MEMORIA: Hay diferentes tipos de memoria como:</h5>
+        <ul>
+            <li><b>MEMORIA CACHE:</b> Almacena datos de acceso rápido para el procesador</li>
+            <li><b>MEMORIA PRINCIPAL(RAM)</b> que guarda temporalmente datos y programas en uso.</li>
+            <li><b>MEMORIA SECUNDARIA</b> como discos duros (HDD), SSD, USB, donde se almacena la información permanentemente.</li>
+            <li><b>MEMORIA VIRTUAL</b> con espacio del disco duro usado como extensión de la RAM cuando esta se llena.</li>
+        </ul>
+
+        <h5>2. ASIGNACION DE MEMORIA</h5>
+        <ul>
+            <li><b>Estatica:</b> Se reserva una cantidad fija de memoria antes de la ejecución del programa</li>
+            <li><b>Dinamica:</b> Se asigna y libera memoria en tiempos ejecucion, optimizando recursos</li>
+        </ul>
+
+        <h5>3. JERARQUIA DE MEMORIA</h5>
+        <ul>
+            <li><b>Registros:</b> Los más rápidos, dentro del procesador.</li>
+            <li><b>Memoria Cache:</b> Rápida pero con capacidad limitada.</li>
+            <li><b>RAM:</b> Más grande, pero más lenta que la cache.</li>
+            <li><b>Almacenamiento Secundario:</b> Mucho más grande, pero más lento que la RAM.</li>
+        </ul>
+
+        <h5>4. GESTION DE MEMORIA</h5>
+        <ul>
+            <li><b>Segmentacion:</b> Divide la memoria en segmentos logicos segun su tipo de uso (codigo, datos, pila).</li>
+            <li><b>Paginacion:</b> Divide la memoria en paginas de tamaño fijo, evitando fragmentacion.</li>
+            <li><b>Swapping:</b> Mueve procesos entre RAM y disco para optimizar el uso de memoria.</li>
+        </ul>
+
+        <h5>5. FRAGMENTACION DE MEMORIA</h5>
+        <ul>
+            <li><b>Fragmentacion Interna:</b> Ocurre cuando los bloques de memoria asignados son mas grandes de lo necesario.</li>
+            <li><b>Fragmentacion Externa:</b> Ocurre cuando hay pequenos bloques libres dispersos que no pueden usarse eficientemente.</li>
+        </ul>
+
+        <h5>6. Memoria Virtual</h5>
+        <p>Usa parte del disco duro como una extensión de la RAM cuando esta se llena. Sin embargo, es más lenta que la RAM real.</p>
+
+        <h4>Memoria cache</h4>
+        <p>La memoria cache es un tipo de memoria de acceso rápido que almacena datos temporales para acelerar el procesamiento y mejorar el rendimiento del sistema. Se encuentra entre el procesador y la memoria principal (RAM) y permite acceder rápidamente a datos que se usan con frecuencia.</p>
+        <p><b>Tiene 3 niveles en los cuales esta</b></p>
+        <ul>
+            <li><b>L1(primer nivel):</b> que es el mas rapido y esta dentro del procesador pero con poca capacidad</li>
+            <li><b>L2(Segundo nivel):</b> un poco mas grande que la L1 pero mas lenta</li>
+            <li><b>L3(Tercer nivel):</b> que esta compartida por varios noches de la cpu y mas grande, también es mas lenta que L1 Y L2</li>
+        </ul>
+
+        <h5>CARACTERISTICAS DE LA MEMORIA CACHE</h5>
+        <p>Tiene como características principales su <b>VELOCIDAD ALTA</b> superando a la RAM, su <b>CERCANA UBICACION AL PROCESADOR</b> que se encuentra integrado en la CPU o en la placa base, su <b>TAMAÑO PEQUEÑO</b> generalmente en KILOBYTES(KB) o MEGABYTES(MB) ademas de su <b>USO INTELIGENTE</b> que almacena datos y programas usados recientemente para reducir los tiempos de espera</p>
+        <p>Como ventajas tenemos que reduce el tiempo de acceso de los datos, mejora el rendimiento del procesador y disminuye la carga sobre la memoria RAM</p>
+
+        <hr width="100%" size="5" color="#060270">
+        <h2>1.2.3 Manejo de n entradas y salidas</h2>
+        <p>El manejo eficiente de múltiples dispositivos de entrada y salida (E/S) es crucial para garantizar un rendimiento óptimo del sistema. Dado que los dispositivos periféricos varían en velocidad y características, se implementan diversas técnicas para gestionar la comunicación entre la CPU y estos dispositivos.</p>
+
+        <h3>Técnicas de Manejo de E/S</h3>
+
+        <h4>1.2.3.1 Módulos de entrada/Salida</h4>
+        <p>Los módulos de entrada/salida (E/S) son esenciales ya que permiten la comunicación entre la CPU y los periféricos externos</p>
+
+        <h5>Funciones Básicas de los Módulos de E/S</h5>
+        <ul>
+            <li><b>Dirección:</b> Se refiere a cómo la CPU selecciona y se comunica con un dispositivo de E/S específico. Cada dispositivo tiene una dirección única que la CPU utiliza para enviar y recibir datos.</li>
+            <li><b>Sincronización:</b> Es el proceso de coordinar la transferencia de datos entre la CPU y los dispositivos de E/S para asegurar que ambos estén listos para enviar o recibir información</li>
+            <li><b>Transferencia:</b> Este es el proceso real de mover dato entre la CPU y los dispositivos de E/S. Puede realizarse mediante varios métodos, como transferencia por encuesta (polling), interrupciones o acceso directo a memoria (DMA).</li>
+        </ul>
+
+        <h4>Dispositivos de E/S Comunes</h4>
+        <ul>
+            <li><b>Puertos Paralelos:</b> Permiten la transferencia de múltiples bits de datos al mismo tiempo. Son rápidos y se utilizan principalmente para impresoras.</li>
+            <li><b>Puertos Seriales:</b> Permiten la transferencia de un bit a la vez. Son más lentos que los puertos paralelos pero son útiles para largas distancias y conexiones estables, como módems y dispositivos de comunicación.</li>
+        </ul>
+
+        <h4>Sincronización y Transferencia de Datos</h4>
+        <p><b>Sincronización Sincrónica:</b> Los datos se envían y reciben en un flujo continuo y constante. Es adecuado para dispositivos que necesitan una alta velocidad de transferencia y una baja latencia.</p>
+        <p><b>Sincronización Asincrona:</b> Los datos se envían en paquetes con señales de control adicionales. Es adecuado para dispositivos que no requieren una transferencia de datos continua.</p>
+        <p><b>Transferencia Paralela:</b> Se transfieren varios bits simultáneamente a través de múltiples canales. Es rápida pero puede ser costosa y compleja debido a la necesidad de múltiples líneas de comunicación.</p>
+        <p><b>Transferencia Serie:</b> Los bits se envían uno a uno a través de un solo canal. Es más lenta que la transferencia paralela pero es más simple y económica, y adecuada para conexiones de larga distancia.</p>
+
+        <h4>Acceso directo a la memoria</h4>
+        <p>El acceso directo a memoria (DMA, Direct Memory Access) es un método que permite a ciertos dispositivos de hardware acceder directamente a la memoria principal sin la intervención del procesador.</p>
+        <p>Esto mejora el rendimiento del sistema al liberar a la CPU de la carga de mover datos entre dispositivos de entrada/salida (E/S) y la RAM.</p>
+
+        <h5>Modos de transferencia</h5>
+        <ul>
+            <li><b>Modo ráfaga (burst mode):</b> El controlador de DMA transfiere un bloque completo de datos en una sola operación.</li>
+            <li><b>Modo ciclo robado (cycle stealing):</b> Se transfiere un pequeño número de datos en cada ciclo, alternando con las operaciones de la CPU.</li>
+            <li><b>Modo transparente:</b> La transferencia de datos ocurre solo cuando la CPU está inactiva</li>
+        </ul>
+
+        <h4>Entrada y salida programada</h4>
+        <p>Se refiere a un método de comunicación entre la CPU y los dispositivos de E/S (como teclados, impresoras o discos duros) en el cual el procesador controla directamente las operaciones de entrada y salida mediante instrucciones específicas en el programa.</p>
+
+        <h5>¿Cómo funciona?</h5>
+        <ol>
+            <li><b>Lectura o escritura directa:</b> La CPU ejecuta instrucciones para leer datos desde un dispositivo de entrada o escribir datos en un dispositivo de salida.</li>
+            <li><b>Espera activa:</b> La CPU espera a que el dispositivo esté listo para enviar o recibir datos, lo cual puede consumir tiempo de procesamiento.</li>
+            <li><b>Transferencia de datos:</b> Una vez que el dispositivo está listo, la CPU transfiere los datos a través de registros de E/S o memoria.</li>
+        </ol>
+
+
+<hr width="100%" size="5" color="#060270">
+        <center><h1 id="u2">UNIDAD 2</h1></center>
+        <h2>Organización del Procesador: Fundamentos y Arquitectura</h2>
+        <h3>Componentes Esenciales del Procesador</h3>
+
+        <h4>Unidad Aritmético-Lógica (ALU)</h4>
+        <p>La ALU es el corazón del procesador, encargada de realizar operaciones aritméticas (suma, resta, multiplicación, división) y lógicas (AND, OR, NOT). Las ALUs modernas pueden ejecutar operaciones complejas, como cálculos de coma flotante. Su eficiencia impacta directamente la velocidad de procesamiento.</p>
+
+        <h4>Unidad de Control (CU)</h4>
+        <p>La CU coordina la ejecución de instrucciones, siguiendo el ciclo "fetch, decode, execute". Determina qué instrucción se debe buscar, cómo decodificarla y a qué unidades funcionales asignarla. La CU puede implementarse mediante microprogramación o cableado fijo, cada uno con sus propias ventajas y desventajas.</p>
+
+        <h4>Registros</h4>
+        <p>Los registros son pequeñas áreas de almacenamiento de alta velocidad que se utilizan para guardar datos, direcciones e información de control. Existen registros de propósito general, punteros de pila y contadores de programa. La jerarquía de registros, como las cachés L1, L2 y L3, es fundamental para acelerar el acceso a los datos.</p>
+
+        <h3>Jerarquía de Memoria y el Procesador</h3>
+
+        <h4>1. Memoria Principal (RAM)</h4>
+        <p>El procesador interactúa constantemente con la RAM para leer y escribir datos e instrucciones. La latencia de acceso a la memoria puede ser un cuello de botella, por lo que se emplean diversas estrategias para mitigarla, como el uso de cachés.</p>
+
+        <h4>2. Caché</h4>
+        <p>La caché es una memoria más pequeña y rápida que almacena copias de los datos utilizados con más frecuencia. Los niveles de caché (L1, L2, L3) funcionan según los principios de localidad espacial y temporal. Los algoritmos de reemplazo (LRU, FIFO) determinan qué datos se descartan cuando la caché está llena.</p>
+
+        <h4>3. Memoria Virtual</h4>
+        <p>La memoria virtual permite al procesador acceder a más memoria de la que está físicamente disponible. Se utiliza un sistema de traducción de direcciones, con tablas de páginas y el TLB (Translation Lookaside Buffer) para acelerar el proceso.</p>
+
+        <h3>Conjunto de Instrucciones (ISA)</h3>
+
+        <h4>Definición de ISA</h4>
+        <p>El Conjunto de Instrucciones (ISA) es la interfaz entre el hardware y el software. Define las instrucciones que el procesador puede ejecutar y cómo se estructuran.</p>
+
+        <h4>CISC vs. RISC</h4>
+        <p>CISC (Complex Instruction Set Computing) como Intel x86, se caracteriza por un mayor número de instrucciones, más complejas. RISC (Reduced Instruction Set Computing) como ARM, tiene un menor número de instrucciones, más simples.</p>
+
+        <h4>Modos de Direccionamiento</h4>
+        <p>Los modos de direccionamiento especifican cómo se calculan las direcciones de memoria para acceder a los datos. Ejemplos: directo, indirecto, indexado.</p>
+
+        <h3>Segmentación (Pipelining)</h3>
+
+        <h4>1. Concepto de Segmentación</h4>
+        <p>La segmentación (pipelining) divide la ejecución de una instrucción en varias etapas, permitiendo que múltiples instrucciones se ejecuten simultáneamente. Esto aumenta el rendimiento del procesador.</p>
+
+        <h4>2. Etapas de Segmentación</h4>
+        <p>Un ejemplo común es una segmentación de 5 etapas: IF (Instruction Fetch), ID (Instruction Decode), EX (Execute), MEM (Memory Access), WB (Write Back).</p>
+
+        <h4>3. Riesgos y Soluciones</h4>
+        <p>La segmentación enfrenta riesgos como dependencias de datos y control. Se utilizan técnicas como el adelantamiento (forwarding), la predicción de saltos y la inserción de burbujas (stalling) para mitigar estos riesgos. La segmentación superescalar permite ejecutar múltiples instrucciones en paralelo.</p>
+
+        <h3>Arquitecturas Multinúcleo y Multiprocesamiento</h3>
+
+        <h4>Multinúcleo vs. Multiprocesamiento</h4>
+        <p>La arquitectura multinúcleo integra varios núcleos de procesamiento en un mismo chip, mejorando el rendimiento y la eficiencia energética. El multiprocesamiento implica el uso de múltiples procesadores físicos separados.</p>
+
+        <h4>Modelos de Memoria</h4>
+        <p>Existen modelos de memoria compartida, donde todos los núcleos o procesadores acceden a la misma memoria, y modelos de memoria distribuida, donde cada procesador tiene su propia memoria local.</p>
+
+        <h4>Programación Paralela</h4>
+        <p>La programación paralela presenta desafíos como la sincronización, la comunicación y el balance de carga. Se utilizan técnicas de sincronización como semáforos, mutexes y variables de condición.</p>
+
+        <h3>Optimización del Rendimiento del Procesador</h3>
+
+        <h4>Hardware</h4>
+        <p>A nivel de hardware, se utilizan técnicas como la predicción de saltos avanzada, la ejecución fuera de orden (out-of-order execution) y la ejecución especulativa.</p>
+
+        <h4>Software</h4>
+        <p>A nivel de software, se aplican optimizaciones del compilador, uso eficiente de la caché y programación paralela.</p>
+
+        <h4>Futuro</h4>
+        <p>El futuro de la optimización se dirige hacia la computación heterogénea, que combina CPUs, GPUs y FPGAs.</p>
+
+        <h3>Tendencias Futuras en la Organización del Procesador</h3>
+
+        <h4>Computación Cuántica</h4>
+        <p>La computación cuántica, basada en los principios de la mecánica cuántica, tiene el potencial de revolucionar la arquitectura de procesadores.</p>
+
+        <h4>Arquitecturas Neuromórficas</h4>
+        <p>Las arquitecturas neuromórficas se inspiran en el cerebro humano, buscando imitar su eficiencia y capacidad de aprendizaje.</p>
+
+        <h4>Integración 3D</h4>
+        <p>La integración 3D de procesadores permite aumentar la densidad de los componentes y reducir las distancias entre ellos.</p>
+
+        <h4>Hardware para IA</h4>
+        <p>La especialización de hardware para IA y aprendizaje automático (TPUs, NPUs) está impulsando el desarrollo de nuevos tipos de procesadores.</p>
+        
+        <hr width="100%" size="5" color="#060270">
+        
+        <h2>Definición y Componentes Básicos de un Registro</h2>
+
+<h3>Componentes de un Registro</h3>
+<p>Un registro es una colección de datos relacionados, organizada en campos. Cada campo representa un atributo específico, almacenando un valor en un tipo de dato definido.</p>
+<p>Los registros son una estructura fundamental en el manejo de datos, ya que permiten agrupar y organizar información de manera eficiente. Esto facilita el almacenamiento, la recuperación y el procesamiento de los datos, ya que toda la información relevante se encuentra en un mismo lugar.</p>
+<p>Además, los registros pueden contener diferentes tipos de datos, como números, texto, fechas, imágenes, entre otros. Esto permite representar una amplia variedad de información de manera estructurada y coherente.</p>
+<p>En resumen, los registros son una herramienta poderosa para la gestión de datos, ya que permiten organizar y almacenar información de manera eficiente y flexible, facilitando su manejo y procesamiento.</p>
+
+<h3>Tipos de Datos</h3>
+<p>Los tipos de datos son fundamentales en la definición de un registro, ya que determinan el tipo de información que puede almacenarse en cada campo. Los tipos de datos más comunes incluyen enteros (int), números de punto flotante (float), caracteres (char) y valores booleanos (bool).</p>
+<p>La elección del tipo de dato apropiado para cada campo depende del tipo de información que se desea almacenar. Por ejemplo, si se necesita almacenar la edad de una persona, un campo de tipo entero sería lo más adecuado. Si se requiere almacenar el precio de un producto, un campo de tipo flotante sería más apropiado.</p>
+<p>Además de los tipos de datos básicos, algunos lenguajes de programación también ofrecen tipos de datos más complejos, como fechas, horas, cadenas de texto o incluso estructuras anidadas. Estos tipos de datos avanzados permiten representar información más diversa y específica dentro de un registro.</p>
+<p>La selección cuidadosa de los tipos de datos es crucial para garantizar la integridad y la eficiencia de los registros. Al utilizar los tipos de datos adecuados, se puede optimizar el uso de la memoria y facilitar el procesamiento y la manipulación de los datos almacenados.</p>
+
+<h3>Tipos de Estructuras de Registros</h3>
+
+<h4>Registros de Longitud Fija</h4>
+<p>Estos registros tienen un tamaño predefinido, lo que facilita el acceso rápido a los datos. Sin embargo, pueden desperdiciar memoria si los datos no llenan completamente el espacio asignado.</p>
+
+<h4>Registros de Longitud Variable</h4>
+<p>Los registros de longitud variable utilizan punteros y descriptores para manejar tamaños dinámicos. Ofrecen flexibilidad, pero el acceso a los datos puede ser más lento.</p>
+
+<h4>Registros Anidados</h4>
+<p>Las estructuras complejas pueden contener otros registros, creando jerarquías de datos. Esto facilita la organización de información compleja, pero puede aumentar la complejidad del código.</p>
+
+<h3>Alineación de Memoria y Relleno (Padding)</h3>
+
+<h4>Optimización del Rendimiento</h4>
+<p>La alineación de memoria garantiza que los registros se alineen con las direcciones de memoria que el procesador puede acceder de forma eficiente.</p>
+
+<h4>Relleno (Padding)</h4>
+<p>Los compiladores insertan relleno (padding) para asegurar la alineación. Este espacio vacío ayuda a optimizar el acceso a la memoria, mejorando el rendimiento.</p>
+
+<h3>Punteros y Referencias en Estructuras de Registros</h3>
+
+<h4>Punteros</h4>
+<p>Los punteros almacenan direcciones de memoria. Permiten la creación de estructuras de datos enlazadas, como listas y árboles, proporcionando flexibilidad y gestión dinámica de la memoria.</p>
+
+<h4>Referencias</h4>
+<p>Las referencias son alias para variables existentes. Proporcionan acceso directo a los datos, eliminando la necesidad de crear una copia, lo que mejora la eficiencia.</p>
+
+<h3>Gestión de Memoria para Registros</h3>
+
+<h4>Asignación Estática</h4>
+<p>La memoria se reserva durante la compilación. Es eficiente pero inflexible, ya que el tamaño del registro debe ser fijo.</p>
+
+<h4>Asignación Dinámica</h4>
+<p>La memoria se reserva en tiempo de ejecución. Proporciona flexibilidad, pero requiere gestión manual de la memoria para evitar errores.</p>
+
+<h3>Estructuras de Registros en Lenguajes de Programación</h3>
+
+<h4>C (struct)</h4>
+<p>C utiliza estructuras (struct) para definir registros. Proporciona control bajo nivel sobre la gestión de memoria.</p>
+
+<h4>Java (class)</h4>
+<p>Java usa clases (class) para representar registros. Brinda características de orientación a objetos, como herencia y polimorfismo.</p>
+
+<h4>Python (class)</h4>
+<p>Python también emplea clases (class) para crear registros. Ofrece una sintaxis más concisa y una gestión de memoria automática.</p>
+
+<h3>Optimización de Estructuras de Registros</h3>
+<ul>
+  <li><b>Reducir el Tamaño:</b> Utilice tipos de datos más pequeños cuando sea posible. Por ejemplo, short en lugar de int para almacenar números pequeños.</li>
+  <li><b>Reordenar Campos:</b> Organice los campos para minimizar el relleno y mejorar la alineación de memoria.</li>
+  <li><b>Localidad de Referencia:</b> Asegúrese de que los campos que se usan juntos estén cerca en la memoria para optimizar el acceso a la caché.</li>
+</ul>
+
+<h3>Aplicaciones Prácticas de Estructuras de Registros</h3>
+<ol>
+  <li><b>Bases de Datos:</b> Los registros se organizan en tablas y relaciones para almacenar información de forma estructurada.</li>
+  <li><b>Sistemas de Archivos:</b> Los directorios y archivos se representan como registros para gestionar el almacenamiento de datos en el sistema de archivos.</li>
+  <li><b>Protocolos de Red:</b> Los datos se serializan y deserializan en registros para transmitir información a través de redes.</li>
+</ol>
+
+        <hr width="100%" size="5" color="#060270">
+        <h2>El Ciclo de Instrucción: Fundamentos de la Ejecución del Código</h2>
+
+<h3>Introducción</h3>
+<p>El ciclo de instrucción es la secuencia fundamental de pasos que la CPU realiza para ejecutar un programa. Este proceso es esencial para el funcionamiento de cualquier sistema computacional, ya que permite la ejecución ordenada y controlada de las instrucciones que componen un programa. Las fases principales del ciclo de instrucción son la Búsqueda (Fetch), la Decodificación (Decode) y la Ejecución (Execute).</p>
+<p>Este ciclo está intrínsecamente relacionado con la arquitectura de Von Neumann, donde tanto los datos como las instrucciones se almacenan en la misma memoria, permitiendo así que la CPU acceda y ejecute las instrucciones de manera secuencial. La optimización de este ciclo es crucial para mejorar el rendimiento del procesador, ya que reduce el tiempo necesario para ejecutar cada instrucción.</p>
+
+<h3>Fase de Búsqueda (Fetch): Acceso a la Instrucción en Memoria</h3>
+<p>Durante la fase de búsqueda, la CPU recupera la siguiente instrucción desde la memoria principal. El Contador de Programa (PC) juega un papel crucial, ya que contiene la dirección de la siguiente instrucción a ser ejecutada. Una vez que la instrucción es buscada, el PC se incrementa para apuntar a la siguiente instrucción en la secuencia.</p>
+<p>La instrucción recuperada se transfiere al Registro de Instrucción (IR), donde se almacena temporalmente para su posterior decodificación. Este proceso asegura que la CPU tenga acceso a la instrucción necesaria para su ejecución. El diagrama del flujo de datos durante esta fase muestra la interacción entre la CPU, la memoria y los registros, ilustrando cómo la instrucción es recuperada y almacenada para su procesamiento.</p>
+
+<h3>Fase de Decodificación (Decode): Interpretación de la Instrucción</h3>
+
+<h4>1. Proceso de Decodificación</h4>
+<p>En esta fase, la CPU interpreta el código de operación (opcode) de la instrucción para determinar la operación a realizar. La decodificación también implica la identificación de los operandos involucrados en la instrucción, que pueden ser registros, direcciones de memoria o datos inmediatos.</p>
+
+<h4>2. Unidad de Control (CU)</h4>
+<p>La Unidad de Control (CU) juega un papel fundamental, ya que genera las señales de control necesarias para coordinar la ejecución de la instrucción. Estas señales aseguran que los diferentes componentes de la CPU trabajen en conjunto para llevar a cabo la operación especificada.</p>
+
+<h4>3. Tabla de Códigos de Operación</h4>
+<p>Una tabla de códigos de operación (opcodes) comunes y sus correspondientes operaciones (ej: ADD, SUB, LOAD, STORE) facilita la comprensión de cómo la CPU interpreta y ejecuta las instrucciones.</p>
+
+<h3>Fase de Ejecución (Execute): Realización de la Operación</h3>
+
+<h4>Operaciones Aritméticas y Lógicas</h4>
+<p>Durante la fase de ejecución, la CPU realiza la operación especificada por la instrucción decodificada. La Unidad Aritmético-Lógica (ALU) realiza operaciones como suma, resta, multiplicación, división, AND, OR, NOT, etc.</p>
+
+<h4>Transferencia de Datos</h4>
+<p>Los datos pueden ser transferidos entre registros, entre la memoria y los registros, o entre dispositivos de entrada/salida. Esta transferencia es esencial para el procesamiento de la información.</p>
+
+<h4>Modificación del Estado del Procesador</h4>
+<p>La ejecución de la instrucción puede modificar los registros de estado, como el indicador de cero (zero flag), el indicador de acarreo (carry flag), etc. Estos registros de estado son utilizados para controlar el flujo de la ejecución del programa.</p>
+
+<h3>Segmento de Instrucciones: Organización del Código en Memoria</h3>
+
+<h4>1. Definición</h4>
+<p>Un segmento de instrucciones es una sección contigua de memoria que contiene las instrucciones de un programa. La organización de este segmento influye en la eficiencia de la ejecución del programa y en la gestión de la memoria.</p>
+
+<h4>2. Tipos de Segmentos</h4>
+<p>Los segmentos se dividen en diferentes tipos, como el segmento de código (text), el segmento de datos (data), la pila (stack) y el heap. Cada uno de estos segmentos tiene un propósito específico en la ejecución del programa.</p>
+
+<h4>3. Segmentación de la Memoria</h4>
+<p>La memoria se divide en segmentos lógicos para proteger y organizar el código y los datos de diferentes programas. Este proceso de segmentación ayuda a prevenir conflictos y asegura la integridad del sistema.</p>
+
+<h3>Conjunto de Instrucciones: Características y Funciones</h3>
+
+<h4>Definición de ISA</h4>
+<p>El conjunto de instrucciones (ISA) es el conjunto completo de instrucciones que una CPU puede ejecutar. Este conjunto define las capacidades de la CPU y cómo interactúa con el software.</p>
+
+<h4>Tipos de Instrucciones</h4>
+<p>Las instrucciones se clasifican en diferentes tipos, como instrucciones de transferencia de datos (LOAD, STORE, MOVE), instrucciones aritméticas y lógicas (ADD, SUB, MUL, DIV, AND, OR, NOT), instrucciones de control de flujo (JUMP, BRANCH, CALL, RETURN) e instrucciones de entrada/salida (IN, OUT).</p>
+
+<h4>Características del ISA</h4>
+<p>Las características del ISA incluyen el tamaño de las instrucciones, el número de operandos y los modos de direccionamiento. Estas características influyen en el rendimiento y la complejidad del procesador.</p>
+
+<h3>Modos de Direccionamiento: Acceso a los Operandos</h3>
+
+<h4>Definición</h4>
+<p>Los modos de direccionamiento son las diferentes formas en que una instrucción puede especificar la ubicación de sus operandos. Estos modos permiten a la CPU acceder a los datos de manera eficiente.</p>
+
+<h4>Tipos de Modos</h4>
+<p>Los tipos de modos de direccionamiento incluyen el modo inmediato, el modo directo, el modo indirecto, el modo por registro y el modo indexado. Cada modo tiene sus propias ventajas y desventajas.</p>
+
+<h4>Ventajas y Desventajas</h4>
+<p>La eficiencia, la flexibilidad y la complejidad varían entre los diferentes modos de direccionamiento. La elección del modo adecuado depende de los requisitos específicos de la instrucción.</p>
+
+<h3>Impacto de los Modos de Direccionamiento en el Diseño del Software</h3>
+
+<h4>1. Selección Adecuada</h4>
+<p>La elección del modo de direccionamiento influye en la eficiencia y la legibilidad del código. Un modo de direccionamiento bien elegido puede mejorar significativamente el rendimiento del programa.</p>
+
+<h4>2. Uso en Programación</h4>
+<p>Los diferentes modos de direccionamiento se utilizan en la programación de alto nivel y en la optimización del código. Los programadores deben comprender los modos de direccionamiento para escribir código eficiente.</p>
+
+<h4>3. Relación con la Arquitectura</h4>
+<p>La arquitectura del sistema (ej: tamaño de la memoria, número de registros) influye en la elección de los modos de direccionamiento. Los diseñadores de sistemas deben considerar los modos de direccionamiento al diseñar la arquitectura.</p>
+        <hr width="100%" size="15" color="#060270">
+        <center><h1 id="u3">UNIDAD 3</h1></center>
+        <h2>3.1 Chip Set</h2>
+
+        <h3>3.1.1 - UNIDAD CENTRAL DE PROCESAMIENTO (CPU)</h3>
+        <p>La Unidad Central de Procesamiento, comúnmente conocida como CPU, es el componente principal de una computadora encargado de interpretar y ejecutar las instrucciones de los programas. Actúa como el "cerebro" del sistema, procesando datos y realizando cálculos necesarios para el funcionamiento de las aplicaciones y del propio sistema operativo.</p>
+
+        <h4>Componentes de una CPU:</h4>
+        <ul>
+            <li><b>Unidad Aritmético-Lógica (ALU):</b> Realiza operaciones matemáticas y lógicas.</li>
+            <li><b>Unidad de Control:</b> Dirige y coordina las operaciones de la computadora, interpretando las instrucciones y gestionando su ejecución.</li>
+            <li><b>Registros:</b> Pequeñas áreas de almacenamiento que contienen datos temporales y direcciones utilizadas durante el procesamiento.</li>
+        </ul>
+
+        <h4>Estructura básica:</h4>
+        <ul>
+            <li><b>Contador de programa</b></li>
+            <li><b>Registros</b></li>
+            <li><b>Unidad de control</b></li>
+            <li><b>Memoria Principal</b></li>
+            <li><b>Sistemas de Entrada/Salida</b></li>
+        </ul>
+
+        <h3>3.1.2 - CONTROL DEL BUS</h3>
+        <p>En la arquitectura de las computadoras, el bus de control es una parte esencial del sistema de buses que permite la comunicación entre la CPU y otros dispositivos dentro del equipo. Mientras que el bus de direcciones transporta información sobre la ubicación de los datos y el bus de datos transfiere los propios datos, el bus de control transmite señales de comando desde la CPU y recibe señales de estado de los dispositivos.</p>
+
+        <h4>Funciones del Control del Bus:</h4>
+        <ul>
+            <li><b>Sincronización de operaciones:</b>
+                <ul>
+                    <li>Coordina la ejecución de instrucciones en la CPU y la comunicación con la memoria y dispositivos de entrada/salida.</li>
+                    <li>Envía señales de reloj para asegurar que todos los componentes trabajen en sincronía.</li>
+                </ul>
+            </li>
+            <li><b>Gestión de permisos y acceso a la memoria:</b>
+                <ul>
+                    <li>Controla el acceso a la memoria RAM, evitando conflictos entre múltiples dispositivos que intentan leer o escribir datos simultáneamente.</li>
+                </ul>
+            </li>
+            <li><b>Indicación del tipo de operación:</b>
+                <ul>
+                    <li>Transporta señales que indican si la operación es de lectura o escritura.</li>
+                    <li>Especifica si la operación involucra memoria, entrada/salida o registros internos de la CPU.</li>
+                </ul>
+            </li>
+            <li><b>Gestión de interrupciones:</b>
+                <ul>
+                    <li>Recibe y maneja interrupciones generadas por dispositivos externos (como el teclado o el disco duro), pausando temporalmente la ejecución de la CPU para atenderlas.</li>
+                </ul>
+            </li>
+            <li><b>Activación y desactivación de dispositivos:</b>
+                <ul>
+                    <li>Envía señales de habilitación o deshabilitación a dispositivos periféricos según sea necesario.</li>
+                </ul>
+            </li>
+            <li><b>Control de errores:</b>
+                <ul>
+                    <li>Detecta errores en la transferencia de datos y puede solicitar reintentos en caso de fallos en la comunicación.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3.1.3 - PUENTES DE ENTRADA/SALIDA</h3>
+
+        <h4>PUENTE SUR</h4>
+        <p>El lado sur se encarga de los dispositivos como la comunicación con las tarjetas de expansión y demás chips que requieren una mayor velocidad de transferencia de datos.</p>
+        <ul>
+            <li>Controla el flujo de datos con la BIOS, los dispositivos de entrada/salida (E/S), las unidades IDE, las tarjetas de expansión PCI y los dispositivos externos USB</li>
+            <li>También se le conoce como Concentrador de Controladores de Entrada/Salida (I/O Controller Hub, ICH)</li>
+            <li>Coordina los diferentes dispositivos de entrada y salida y algunas otras funcionalidades de baja velocidad</li>
+        </ul>
+
+        <h4>PUENTE NORTE</h4>
+        <p>El lado norte se encarga de controlar los dispositivos de almacenamiento y demás periféricos que tienen dentro del CPU una velocidad de transferencia de datos menor.</p>
+        <ul>
+            <li>Controla el flujo de datos entre la CPU, la memoria RAM y la tarjeta gráfica</li>
+            <li>Determina el tipo de procesador y memoria RAM que admite la placa base</li>
+            <li>Conecta la CPU al puente norte mediante el bus frontal (FSB)</li>
+            <li>Conecta el puente norte con el chip del puente sur mediante el bus PCI</li>
+        </ul>
+
+        <p><b>Nota:</b> Los puentes de entrada y salida de un chipset son el puente norte y el puente sur, que controlan el flujo de datos entre los componentes de la tarjeta madre.</p>
+
+        <h3>3.1.4 - CONTROLADOR DE INTERRUPCIONES</h3>
+        <p>Un controlador de interrupciones es <b>un componente que reúne eventos de interrupción de hardware de varias fuentes y los presenta al procesador</b>, lo que permite un manejo eficiente de eventos en tiempo real sin la necesidad de un sondeo constante por parte del procesador, permitiendo un manejo eficiente de eventos en tiempo real.</p>
+
+        <h4>¿Cómo funciona?</h4>
+        <ol>
+            <li>El controlador de interrupciones reúne las solicitudes de interrupción de los dispositivos.</li>
+            <li>Establece prioridades entre las solicitudes de interrupción.</li>
+            <li>Selecciona la solicitud de interrupción que informará al procesador principal.</li>
+            <li>Recibe una notificación con el número de interrupción.</li>
+            <li>Ejecuta la rutina de servicio de interrupciones (ISR) correspondiente.</li>
+        </ol>
+
+        <h3>3.1.5 - ACCESO DIRECTO A MEMORIA (DMA)</h3>
+        <p>El acceso directo a memoria (DMA, del inglés direct memory access) permite a cierto tipo de componentes de una computadora acceder a la memoria del sistema para leer o escribir independientemente de la unidad central de procesamiento (CPU), DMA es una característica esencial en todos los ordenadores modernos, ya que permite a dispositivos de diferentes velocidades comunicarse sin someter a la CPU a una carga masiva de interrupciones.</p>
+
+        <p>Una transferencia DMA consiste principalmente en copiar un bloque de memoria de un dispositivo a otro. En lugar de que la CPU inicie la transferencia, la transferencia se lleva a cabo por el controlador DMA. Un ejemplo típico es mover un bloque de memoria desde una memoria externa a una interna más rápida. Tal operación no ocupa al procesador y, por ende, éste puede efectuar otras tareas.</p>
+
+        <h4>Problemas de coherencia en la memoria cache:</h4>
+        <p>La DMA puede llevar a problemas de coherencia de caché, Cuando la CPU accede a X lugar en la memoria, el valor actual se almacena en la caché. Si se realizan operaciones posteriores en X, se actualizará la copia en caché de X, pero no la versión de memoria externa de X. Si la caché no se vacía en la memoria antes de que otro dispositivo intente acceder a X, el dispositivo recibirá un valor caducado de X.</p>
+
+        <h4>Transferencias:</h4>
+        <p>Durante las operaciones del DMA, el rendimiento del sistema puede verse afectado debido a que este dispositivo hace un uso intensivo del bus y por lo tanto la CPU no puede leer datos de memoria. Esto provoca que mientras el DMA está operando, la CPU deba esperar a que finalice dicha tarea sin ejecutar ninguna instrucción. Para solventar esto, existe una memoria cache dentro de la CPU que permite a ésta seguir trabajando mientras el DMA mantiene ocupado el bus.</p>
+
+        <h3>3.1.6 - CIRCUITOS DE TEMPORIZACIÓN</h3>
+        <ul>
+            <li>Dispone de dos salidas al igual que un flip flop, una salida es la inversa de la otra, el temporizador solamente posee un estado estable el otro es inestable, permanece en su estado estable, hasta que se activa con un pulso de entrada, una vez que se activa cambia a su estado inestable y ahí permanece por un período fijo de tiempo, este tiempo lo determina una constante de tiempo RC externa que se conecta al temporizador, después de que transcurre el tiempo tv . las salidas dos salidas del temporizador regresan a su estado estable, hasta que se activan otra vez.</li>
+            <li>La finalidad de la temporización es retardar el paso de una señal desde un nodo del circuito hasta otro punto, el diseño de este circuito se realiza con un dispositivo que se conoce con el nombre de "monoestable" o "temporizador", éste elemento electrónico dispone de una entrada y una salida. Se dispone de dos tipos de comportamiento en que se manifiestan las salidas de los temporizadores, "redisparables" y "no redisparables" y su entrada responde a dos tipos de disparo, "activación" y "desactivación"</li>
+        </ul>
+
+        <h4>Estados de espera:</h4>
+        <p>Cuando se conectan tarjetas al bus de la PC, un problema común es igualar la velocidad de los ciclos del bus con la de las tarjetas. Es común que una tarjeta sea más lenta que el bus. Así, el bus de la PC esta diseñado para resolver este problema. La señal READY del bus se puede usar para extender la longitud del ciclo del bus para igualar una tarjeta lenta o parar el bus del sistema hasta que se sincronice con el ciclo de la tarjeta.</p>
+
+        <h3>3.1.7 - CIRCUITOS DE CONTROL</h3>
+        <p>Coordinan y gestionan las señales que controlan las operaciones de la CPU y otros componentes del sistema.</p>
+
+        <h4>Propósito:</h4>
+        <p>Aseguran que las diferentes partes del sistema (memoria, ALU, registros, etc.) trabajen en conjunto de manera sincronizada.</p>
+
+        <h4>Tipos de control:</h4>
+        <ul>
+            <li><b>Secuencial:</b> Las señales de control se activan en un orden específico, paso a paso.</li>
+            <li><b>Combinacional:</b> Las señales de control se generan a través de combinaciones lógicas, dependiendo del estado de las instrucciones.</li>
+        </ul>
+
+        <h4>Componentes principales:</h4>
+        <ul>
+            <li><b>Registro de control:</b> Almacena valores de control.</li>
+            <li><b>Decodificador de instrucciones:</b> Identifica el tipo de instrucción que se ejecutará.</li>
+            <li><b>Generador de señales de control:</b> Envía señales específicas para ejecutar las instrucciones.</li>
+            <li><b>Contador de programa:</b> Mantiene la dirección de la siguiente instrucción a ejecutar.</li>
+        </ul>
+
+        <h3>3.1.8 - CONTROLADORES DE VIDEO</h3>
+        <p>Gestionan la salida visual de la computadora, tomando los datos gráficos y convirtiéndolos en señales que pueden ser interpretadas por el monitor.</p>
+
+        <h4>Propósito:</h4>
+        <p>Permiten que la computadora muestre imágenes, texto y gráficos en la pantalla.</p>
+
+        <h4>Principales funciones:</h4>
+        <ul>
+            <li><b>Generación de imágenes:</b> Convierte datos en señales que el monitor puede mostrar.</li>
+            <li><b>Manejo de resolución:</b> Ajusta la cantidad de píxeles y la resolución de la pantalla.</li>
+            <li><b>Sincronización de señales:</b> Envía señales al monitor para asegurarse de que los píxeles se dibujen correctamente.</li>
+        </ul>
+
+        <h4>Tipos:</h4>
+        <ul>
+            <li><b>VGA:</b> Un estándar antiguo con resoluciones básicas.</li>
+            <li><b>Tarjetas gráficas modernas:</b> Con soporte para gráficos en 3D, resoluciones altas y procesamiento paralelo (por ejemplo, tarjetas de Nvidia o AMD).</li>
+        </ul>
+
+        <h4>Funciones adicionales:</h4>
+        <ul>
+            <li><b>Buffering de imágenes:</b> Almacena imágenes antes de enviarlas al monitor para evitar parpadeos.</li>
+            <li><b>Aceleración de hardware:</b> Las GPU modernas aceleran el procesamiento gráfico, mejorando el rendimiento en videojuegos y aplicaciones de diseño.</li>
+        </ul>
+        <hr width="100%" size="5" color="#060270">
+        <h2>3.2 Aplicaciones</h2>
+
+        <h3>3.2.1 - Entrada/Salida (E/S)</h3>
+        <p>Entrada/Salida (E/S) hace referencia al conjunto de dispositivos y técnicas que permiten a una computadora interactuar con el mundo exterior, ya sea recibiendo datos (entrada) o enviándolos (salida). Este proceso es crucial para que las aplicaciones puedan recibir información del usuario o de otros sistemas y devolver resultados de manera comprensible.</p>
+
+        <h4>Dispositivos de Entrada</h4>
+        <p>Son aquellos que permiten a los usuarios enviar información a la computadora:</p>
+        <ul>
+            <li>Teclado</li>
+            <li>Ratón</li>
+            <li>Micrófonos</li>
+            <li>Cámaras</li>
+            <li>Escáneres</li>
+        </ul>
+
+        <h4>Dispositivos de Salida</h4>
+        <p>Son los dispositivos que permiten a la computadora mostrar información al usuario:</p>
+        <ul>
+            <li>Pantallas/Monitores</li>
+            <li>Impresoras (de tinta, láser, etc.)</li>
+            <li>Altavoces</li>
+            <li>Auriculares</li>
+            <li>Proyectores</li>
+            <li>Pantallas de TV</li>
+        </ul>
+
+        <h3>Mecanismos de E/S</h3>
+        <p>Los dispositivos de E/S están gestionados por el sistema operativo, que controla el flujo de datos entre la CPU, los dispositivos y la memoria. Existen diferentes tipos de E/S:</p>
+
+        <h4>E/S Programada</h4>
+        <p>Ejemplo: Cuando un programa accede directamente a un dispositivo (como un teclado o un ratón) para leer datos, haciendo que la CPU espere hasta que el dispositivo esté listo para enviar los datos. Esto es sencillo, pero ineficiente, ya que la CPU puede perder tiempo esperando.</p>
+
+        <h4>E/S con Interrupciones</h4>
+        <p>Ejemplo: Si un usuario presiona una tecla en el teclado, el dispositivo de entrada interrumpe el flujo de trabajo de la CPU para informarle que hay datos disponibles. La CPU puede entonces leer los datos de manera eficiente sin tener que estar constantemente verificando si el dispositivo está listo, optimizando el uso del tiempo de procesamiento.</p>
+
+        <h4>E/S con Acceso Directo a Memoria (DMA)</h4>
+        <p>Ejemplo: En un sistema de almacenamiento (como un disco duro), cuando se transfiere una gran cantidad de datos de manera continua a la memoria sin que la CPU esté directamente involucrada. Esto permite liberar a la CPU para otros procesos mientras se realiza la transferencia de datos, mejorando la eficiencia en tareas que requieren grandes volúmenes de datos, como en la edición de video.</p>
+
+        <h3>3.2.2 - Almacenamiento</h3>
+        
+        <h4>¿Qué es?</h4>
+        <ul>
+            <li>Almacena datos permanentemente, incluso sin energía.</li>
+            <li>Incluye discos duros (HDD), unidades de estado sólido (SSD), discos compactos y DVDs regrabables.</li>
+            <li>Más lento que la RAM, pero con mayor capacidad.</li>
+        </ul>
+
+        <h4>Tipos de almacenamiento</h4>
+        <table border="1" width="100%">
+            <tr>
+                <th>Almacenamiento magnético</th>
+                <th>Almacenamiento electrónico</th>
+                <th>Almacenamiento óptico</th>
+            </tr>
+            <tr>
+                <td>Utiliza materiales ferromagnéticos, como cintas magnéticas, disquetes, y unidades de disco rígido.</td>
+                <td>Utiliza la memoria flash u otras tecnologías de memoria no volátil, como unidades USB y tarjetas de memoria.</td>
+                <td>Utiliza láseres para leer y escribir datos en discos ópticos, como CD, DVD, y Blu-ray.</td>
+            </tr>
+        </table>
+
+        <p>La cantidad de almacenamiento que necesitas depende de tus actividades. Por ejemplo, un usuario básico puede necesitar 256 GB o 512 GB, mientras que un usuario avanzado o profesional puede necesitar 1 TB o más.</p>
+
+        <h3>3.2.3 - Fuentes de Alimentación</h3>
+        <p>Una fuente de alimentación es un dispositivo encargado de convertir la energía eléctrica de la red (corriente alterna o CA) en energía utilizable por los componentes electrónicos de una computadora (corriente directa o CD). Sin una fuente de alimentación, ningún componente del sistema podría funcionar.</p>
+
+        <h4>Funciones principales</h4>
+        <ul>
+            <li><b>Conversión de voltaje:</b> Convierte 120V o 220V CA en voltajes bajos de CD (como 12V, 5V, 3.3V).</li>
+            <li><b>Distribución de energía:</b> Proporciona energía a componentes como:
+                <ul>
+                    <li>Placa base (motherboard)</li>
+                    <li>Disco duro</li>
+                    <li>Unidad de estado sólido (SSD)</li>
+                    <li>Tarjeta gráfica (GPU)</li>
+                    <li>Ventiladores</li>
+                </ul>
+            </li>
+            <li><b>Protección:</b> Protege los componentes contra:
+                <ul>
+                    <li>Sobrecargas</li>
+                    <li>Cortocircuitos</li>
+                    <li>Picos de voltajes</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Este componente es esencial ya que asegura el correcto funcionamiento y la vida útil de los componentes. Una fuente puede causar inestabilidad, fallos o daños.</p>
+
+        <h4>Tipos de fuentes de alimentación</h4>
+        <ul>
+            <li><b>AT (Advanced Technology):</b> Son antiguas, poco eficientes, con conector de encendido físico directo.</li>
+            <li><b>ATX (Advanced Technology Extended):</b> Es el estándar actual, el apagado y encendido es controlado por el sistema operativo, es más eficiente y segura.</li>
+            <li><b>SFX (Small Form Factor Extended):</b> es una versión compacta del ATX, es ideal para gabinetes pequeños, misma funcionalidad que la ATX, más costoso por su diseño compacto.</li>
+        </ul>
+        <hr width="100%" size="5" color="#060270">
+
+        <h2>3.3: AMBIENTES DE SERVICIO</h2>
+        
+        <p>Se refiere al entorno o conjunto de recursos y servicios que permite que los sistemas informáticos y las aplicaciones operen de manera eficiente.</p>
+        
+        <p>Estos ambientes proporcionan los medios necesarios para la ejecución de tareas y aplicaciones, asegurando que todos los componentes del sistema estén interconectados y operando correctamente.</p>
+        
+        <h3>LOS AMBIENTES DE SERVICIO PUEDEN INVOLUCRAR DIVERSAS CAPAS Y RECURSOS, INCLUYENDO:</h3>
+        <ul>
+            <li><b>Sistemas Operativos:</b> Gestionan la memoria, los procesos y los dispositivos de entrada/salida.</li>
+            <li><b>Redes:</b> Permiten la comunicación entre diferentes computadoras y sistemas.</li>
+            <li><b>Entorno de Ejecución:</b> Donde las aplicaciones se ejecutan, como máquinas virtuales o contenedores.</li>
+            <li><b>Bases de Datos:</b> Proveen almacenamiento y acceso a datos para las aplicaciones.</li>
+            <li><b>Servicios en la Nube:</b> Infraestructura y plataformas que se ofrecen a través de Internet (IaaS, PaaS, SaaS).</li>
+            <li><b>Seguridad:</b> Mecanismos para proteger datos y garantizar el acceso solo a usuarios autorizados.</li>
+            <li><b>Ambientes de Desarrollo:</b> Herramientas que los desarrolladores usan para crear y probar aplicaciones.</li>
+        </ul>
+
+        <h3>3.3.1 - NEGOCIOS</h3>
+        
+        <p>La tecnología en general ha sido la causa principal y la acción más directa para la transformación del trabajo de las organizaciones. Tanto los bienes de capital (computadores, teléfonos, vídeos, grabadoras, etc.), como los programas y sistemas de información y comunicación en general, han incrementado enormemente la productividad y eficiencia de las organizaciones.</p>
+        
+        <p>Tenemos como ejemplos los siguientes: bases de datos en redes de todo orden y topología, sistemas de reservaciones en aerolíneas, sistemas de contabilidad y nóminas, archivos clínicos en centros de salud, sistemas de conmutación electrónica y un sin número de otras aplicaciones a procesos administrativos.</p>
+        
+        <h4>Existen tres modalidades más comunes en el trabajo de los sistemas de informática:</h4>
+        <ul>
+            <li><b>Usos de procesos aritméticos:</b> Llevan a cabo procesos de operaciones básicas como (suma, resta, multiplicación y división).</li>
+            <li><b>Ejecución de funciones lógicas:</b> Fijan pasos a seguir ante diferentes situaciones preestablecidas, tal es el caso del control de pago por horas suplementarias laboradas.</li>
+            <li><b>Operaciones de entrada/salida:</b> Es un proceso en el cual la información es generada a través de una unidad central de procesamiento (CPU) para almacenamiento y uso posterior, como el caso de los sistemas de nómina de pagos, en los que se introduce un estándar de datos y sale un cheque.</li>
+        </ul>
+
+        <h3>3.3.2 - INDUSTRIA</h3>
+        
+        <h4>¿Cuál es el uso de la computadora en la industria?</h4>
+        <p>Son ideales para las cadenas logísticas, gestionar almacenes, identificar productos, automatizar fábricas o ensamblaje, así como para la preparación de pedidos. Además, al ser adaptados especialmente para soportar los entornos industriales, estos dispositivos tendrán una gran durabilidad.</p>
+        
+        <p>En la industria automotriz, por ejemplo, se utilizan para trabajos de diseño e ingeniería, control de calidad y pruebas, gestión de producción y gestión de flotas.</p>
+        
+        <h4>¿Qué son las computadoras industriales?</h4>
+        <p>Una PC industrial o una computadora industrial es una solución robusta diseñada para satisfacer los requisitos ambientales más exigentes, como la protección contra líquidos y polvo, temperaturas extremas, fuertes golpes y vibraciones.</p>
+        
+        <h4>¿Cómo benefician las computadoras a la industria?</h4>
+        <p>Una computadora industrial siempre ejecutará sus tareas bajo procesos seguros y sin descuidar la eficacia del control de las operaciones, por ello resultan ser aparatos ideales para almacenes, flotas comerciales o cualquier otra industria que requiera gestión y eficiencia en sus actividades.</p>
+
+        <h3>3.3.3 COMERCIO ELECTRÓNICO</h3>
+        
+        <p>El comercio electrónico es un entorno donde se realizan transacciones comerciales a través de internet. Este ambiente depende totalmente de infraestructura tecnológica y sistemas informáticos robustos. La arquitectura de computadoras en este entorno debe estar diseñada para soportar altos volúmenes de datos, múltiples usuarios simultáneos y asegurar una experiencia rápida y segura.</p>
+        
+        <h4>Características que debe cumplir los equipos:</h4>
+        <ul>
+            <li><b>Alto rendimiento:</b> Procesa muchas solicitudes al mismo tiempo con rapidez y eficiencia.</li>
+            <li><b>Escalabilidad:</b> Se adapta al crecimiento de usuarios o transacciones (uso de la nube).</li>
+            <li><b>Alta disponibilidad:</b> Funciona 24/7 con respaldo y balanceo de carga.</li>
+            <li><b>Seguridad:</b> Protege datos con cifrado, firewalls y autenticación.</li>
+            <li><b>Interconectividad:</b> Compatible con múltiples dispositivos y sistemas externos.</li>
+            <li><b>Soporte de software:</b> Ejecuta apps y sistemas como ERP, CRM y carritos de compras sin fallos.</li>
+        </ul>
+        
+        <h4>Importancia</h4>
+        <p>El comercio electrónico requiere una infraestructura tecnológica sólida para funcionar correctamente. Esto incluye:</p>
+        <ul>
+            <li><b>Hardware:</b> Servidores, centros de datos, dispositivos del cliente.</li>
+            <li><b>Software:</b> Sistemas operativos, bases de datos, plataformas web y apps.</li>
+            <li><b>Redes:</b> Conectividad estable y rápida para transferencias de datos y pagos en tiempo real.</li>
+        </ul>
+        
+        <p>La arquitectura debe diseñarse para ser eficiente, segura, escalable y siempre disponible. Por eso se utilizan soluciones modernas como la nube, arquitecturas distribuidas, virtualización y balanceo de carga.</p>
+
+        <hr width="100%" size="15" color="#060270">
+        <center><h1 id="u4">UNIDAD 4</h1></center>
+        <h2>Procesamientos Paralelos</h2>
+
+        <h2>4.1 Aspectos básicos de la computación paralela</h2>
+        <p>Un computador paralelo es un sistema compuesto por múltiples elementos de procesamiento independientes que trabajan de manera coordinada para resolver problemas de alto coste computacional. Su ámbito de aplicación abarca desde la conexión de procesadores dentro de un mismo sistema hasta la interconexión de computadores completos.</p>
+
+        <h3>Principios de la Computación Paralela</h3>
+        <ul>
+            <li>Se basa en la ejecución simultánea de múltiples instrucciones, dividiendo problemas grandes en subproblemas más pequeños que se resuelven en paralelo.</li>
+            <li>Tipos de paralelismo:
+                <ul>
+                    <li>Nivel de bit [ej: aumento del tamaño de palabra del procesador]</li>
+                    <li>Nivel de instrucción [pipelines, procesadores superescalares]</li>
+                    <li>De datos [STMD, GPUs]</li>
+                    <li>De tareas [ejecución concurrente de procesos distintos]</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Importancia y Evolución</h3>
+        <ul>
+            <li>Surgió como respuesta a las limitaciones físicas del aumento de frecuencia en procesadores [problemas de consumo energético y calor]</li>
+            <li>Hoy es el paradigma dominante, especialmente con procesadores multinúcleo</li>
+        </ul>
+
+        <h3>Clasificación de Computadoras Paralelas</h3>
+        <ol>
+            <li><b>Sistemas integrados:</b>
+                <ul>
+                    <li>Procesadores multinúcleo y multiprocesador (varios núcleos/CPUs en una misma máquina)</li>
+                </ul>
+            </li>
+            <li><b>Sistemas distribuidos:</b>
+                <ul>
+                    <li>Clústeres, MPPs (Massively Parallel Processors) y grids (varias máquinas trabajando en una misma tarea)</li>
+                </ul>
+            </li>
+            <li><b>Arquitecturas especializadas:</b>
+                <ul>
+                    <li>Se combinan con procesadores tradicionales para acelerar tareas específicas (ej: GPUs para cálculos matriciales)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Desafíos en Programación Paralela</h3>
+        <ul>
+            <li>Mayor complejidad: Introducción de errores como condiciones de carrera (race conditions)</li>
+            <li>Comunicación y sincronización: Dificultan el rendimiento óptimo</li>
+            <li>Ley de Amdahl: Establece el límite teórico de aceleración de un programa al paralelizarlo, dependiendo de su fracción secuencial</li>
+        </ul>
+
+        <h2>4.2 Tipos de computación paralela</h2>
+
+        <h3>1. Paralelismo a Nivel de Bit</h3>
+        <p>El paralelismo a nivel de bit fue una de las primeras estrategias para mejorar el rendimiento de los procesadores. Desde los años 70 hasta mediados de los 80, el principal avance consistió en aumentar el tamaño de palabra [word size] del procesador, es decir, la cantidad de bits que podía manejar en una sola operación.</p>
+
+        <h4>Evolución histórica:</h4>
+        <ul>
+            <li>Los primeros microprocesadores eran de 4 bits [ej: Intel 4004]</li>
+            <li>Luego evolucionaron a 8 bits [Intel 8080, Zilog Z80], 16 bits [Intel 8086], 32 bits [Intel 80386] y finalmente 64 bits [AMD Athlon 64, Intel Core 2]</li>
+            <li>Hoy en día, los procesadores de 64 bits son el estándar en computación general</li>
+        </ul>
+
+        <h4>Ventaja:</h4>
+        <ul>
+            <li>Un procesador con un tamaño de palabra mayor puede realizar operaciones más complejas en menos ciclos</li>
+            <li>Ejemplo: Sumar dos números de 16 bits en un CPU de 8 bits requiere dos instrucciones [primero los 8 bits bajos, luego los altos con acarreo], mientras que un CPU de 16 bits lo hace en una sola</li>
+        </ul>
+
+        <h3>2. Paralelismo a Nivel de Instrucción (ILP)</h3>
+        <p>A partir de los años 80, el enfoque cambió hacia la ejecución simultánea de múltiples instrucciones dentro de un mismo procesador. Esto se logró mediante dos técnicas principales:</p>
+
+        <h4>a) Pipeline (Tuberías de Instrucción)</h4>
+        <ul>
+            <li>Divide la ejecución de una instrucción en etapas secuenciales, permitiendo que varias instrucciones se solapen</li>
+            <li>En arquitecturas RISC, el pipeline clásico tiene 5 etapas:
+                <ol>
+                    <li>IF (Instruction Fetch): Obtener la instrucción de memoria</li>
+                    <li>ID (Instruction Decode): Decodificar la instrucción</li>
+                    <li>EX (Execute): Realizar la operación</li>
+                    <li>MEM (Memory Access): Acceder a memoria (si es necesario)</li>
+                    <li>WB (Write Back): Escribir el resultado en un registro</li>
+                </ol>
+            </li>
+            <li>Un procesador con un pipeline de N etapas puede tener hasta N instrucciones en ejecución simultánea (ej: Pentium 4 tenía 35 etapas para mayor velocidad de reloj)</li>
+        </ul>
+
+        <h4>b) Procesadores Superescalares</h4>
+        <ul>
+            <li>Pueden ejecutar múltiples instrucciones por ciclo aprovechando unidades de ejecución paralelas</li>
+            <li>Técnicas clave:
+                <ul>
+                    <li>Ejecución fuera de orden (Out-of-Order Execution): Reordena instrucciones para evitar esperas por dependencias</li>
+                    <li>Scoreboarding y Algoritmo de Tomasulo: Gestionan conflictos de datos mediante renombrado de registros</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3. Paralelismo de Datos [Data-Level Parallelism - DLP]</h3>
+        <p>Se enfoca en procesar grandes conjuntos de datos de manera paralela, típico en aplicaciones científicas y de simulación.</p>
+
+        <h4>Aplicaciones:</h4>
+        <ul>
+            <li>Procesamiento de imágenes</li>
+            <li>Simulaciones físicas</li>
+            <li>Machine learning</li>
+        </ul>
+
+        <h4>Dificultad:</h4>
+        <p>Las dependencias entre iteraciones [ej: un cálculo necesita el resultado de una iteración anterior] limitan la parallelización.</p>
+
+        <h4>Soluciones:</h4>
+        <ul>
+            <li>Uso de instrucciones SIMD [Single Instruction, Multiple Data] como SSE y AVX en CPUs modernas</li>
+            <li>GPUs, que son altamente optimizadas para paralelismo de datos masivo</li>
+        </ul>
+
+        <h3>4. Paralelismo de Tareas [Task-Level Parallelism - TLP]</h3>
+        <p>En lugar de paralelizar operaciones similares [como en DLP], el TLP ejecuta tareas diferentes de manera concurrente.</p>
+
+        <h4>Ejemplos:</h4>
+        <ul>
+            <li>Un servidor web manejando múltiples peticiones de usuarios al mismo tiempo</li>
+        </ul>
+
+        <h4>Limitación:</h4>
+        <p>No escala tan fácilmente como el paralelismo de datos, ya que depende de la estructura del programa.</p>
+
+        <h4>Implementaciones:</h4>
+        <ul>
+            <li>Multihilo [Multithreading]: Ejecuta varios hilos en un mismo núcleo [ej: Hyper-Threading de Intel]</li>
+            <li>Multiprocesamiento: Usa varios núcleos o CPUs para tareas independientes</li>
+        </ul>
+
+        <h2>4.2.1 Clasificación</h2>
+        <p>La clasificación de Flynn es la más utilizada para categorizar sistemas computacionales según el flujo de instrucciones y datos. Sin embargo, debido a los avances tecnológicos, algunas arquitecturas modernas (como los procesadores vectoriales o híbridos) no encajan perfectamente en esta taxonomía.</p>
+
+        <h3>Arquitecturas paralelas</h3>
+        <ul>
+            <li><b>MIMD</b>
+                <ul>
+                    <li>Multiprocesador</li>
+                    <li>Multicomputador</li>
+                    <li>Multi-multiprocesador</li>
+                    <li>Máquinas de Flujo de Datos</li>
+                </ul>
+            </li>
+            <li><b>SIMD</b>
+                <ul>
+                    <li>Procesadores Matriciales (arrays)</li>
+                </ul>
+            </li>
+            <li><b>MISD</b>
+                <ul>
+                    <li>Procesadores vectoriales</li>
+                    <li>Arrays Sistólicos</li>
+                </ul>
+            </li>
+            <li><b>Híbridas</b>
+                <ul>
+                    <li>MIMD-SIMD</li>
+                    <li>MIMD-MISD</li>
+                </ul>
+            </li>
+            <li><b>Propósito específico</b>
+                <ul>
+                    <li>Redes Neuronales</li>
+                    <li>Procesador de lógica difusa</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>4.2.2 Arquitectura de los computadores secuenciales</h2>
+        <p>Flynn clasifica las arquitecturas en cuatro categorías según el flujo de instrucciones y datos:</p>
+
+        <h3>1. SISD (Single Instruction, Single Data)</h3>
+        <ul>
+            <li><b>Definición:</b> Un solo flujo de instrucciones actúa sobre un solo flujo de datos</li>
+            <li><b>Ejemplo:</b> Arquitectura clásica de Von Neumann (CPU monocore sin paralelismo)</li>
+            <li><b>Características:</b>
+                <ul>
+                    <li>Usa un contador de programa para ejecución secuencial</li>
+                    <li>Hoy en día, casi ningún procesador es puramente SISD, ya que incorporan técnicas como pipelines o ejecución superescalar</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2. MISD (Multiple Instruction, Single Data)</h3>
+        <ul>
+            <li><b>Definición:</b> Múltiples instrucciones operan sobre un mismo dato</li>
+            <li><b>Interpretaciones:</b>
+                <ul>
+                    <li>Impráctica: No existen sistemas donde varias CPUs ejecuten instrucciones distintas sobre el mismo dato</li>
+                    <li>Aplicable a procesamiento en pipeline: Como en arrays sistólicos o procesadores vectoriales, donde un dato fluye por múltiples etapas de procesamiento</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3. SIMD (Single Instruction, Multiple Data)</h3>
+        <ul>
+            <li><b>Definición:</b> Una misma instrucción se aplica a múltiples datos en paralelo</li>
+            <li><b>Ejemplos:</b>
+                <ul>
+                    <li>Procesadores vectoriales (ej: Intel SSE, AVX)</li>
+                    <li>GPUs en operaciones matriciales</li>
+                </ul>
+            </li>
+            <li><b>Ventaja:</b> Ideal para operaciones repetitivas sobre vectores (ej: cálculo de salarios en una empresa)</li>
+        </ul>
+
+        <h3>4. MIMD (Multiple Instruction, Multiple Data)</h3>
+        <ul>
+            <li><b>Definición:</b> Múltiples procesadores ejecutan distintas instrucciones sobre distintos datos</li>
+            <li><b>Ejemplos:</b>
+                <ul>
+                    <li>Sistemas multinúcleo (ej: CPUs modernas)</li>
+                    <li>Clusters y supercomputadoras</li>
+                </ul>
+            </li>
+            <li><b>Ventaja:</b> Máxima flexibilidad en computación paralela</li>
+        </ul>
+
+        <h2>4.2.3 Organización del espacio de direcciones de memoria</h2>
+        <p>Las memorias de acceso secuencial requieren leer datos en orden hasta llegar al deseado. Se clasifican en:</p>
+        <ul>
+            <li>Registros de desplazamiento</li>
+            <li>Dispositivos por acoplamiento de carga</li>
+            <li>Memorias de burbuja</li>
+        </ul>
+
+        <h2>4.3 Sistemas de memoria compartida</h2>
+        <p>Un multiprocesador puede verse como un computador paralelo compuesto por varios procesadores interconectados que comparten un mismo sistema de memoria.</p>
+
+        <p>Los sistemas multiprocesadores son arquitecturas MIMD con memoria compartida. Tienen un único espacio de direcciones para todos los procesadores y los mecanismos de comunicación se basan en el paso de mensajes desde el punto de vista del programador.</p>
+
+        <p>Dado que los multiprocesadores comparten diferentes módulos de memoria, pudiendo acceder a un mismo módulo varios procesadores, a los multiprocesadores también se les llama sistemas de memoria compartida.</p>
+
+        <h3>Multiproceso</h3>
+        <p>Es conocido como el uso de múltiples procesos concurrentes en un sistema en lugar de un único proceso en un instante determinado. Como la multitarea, que permite a múltiples procesos compartir una única CPU, múltiples CPUs pueden ser utilizados para ejecutar múltiples hilos dentro de un único proceso.</p>
+
+        <p>El multiproceso para tareas generales es, a menudo, bastante difícil de conseguir debido a que puede haber varios programas manejando datos internos (conocido como estado o contexto) a la vez.</p>
+
+        <p>Los programas típicamente se escriben asumiendo que sus datos son incorruptibles. Sin embargo, si otra copia del programa se ejecuta en otro procesador, las dos copias pueden interferir entre sí intentando ambas leer o escribir su estado al mismo tiempo.</p>
+
+        <p>Para evitar este problema se usa una variedad de técnicas de programación incluyendo semáforos y otras comprobaciones y bloqueos que permiten a una sola copia del programa cambiar de forma exclusiva ciertos valores.</p>
+
+        <h2>4.3.1 Redes De Medio Compartido</h2>
+        <p>En el mundo de las comunicaciones, y de las redes de computadores en particular, el medio que se utiliza para comunicarse suele estar compartido.</p>
+
+        <p>En el caso de la televisión o la radio, existen diferentes canales y emisoras que están compartiendo el medio. A fin de que no haya problemas, hay una regulación del espectro radioeléctrico: se tiene cuidado de que cada uno de los canales tenga asignada una frecuencia determinada y que no haya más de un canal usando la misma frecuencia. Este sistema se llama multiplexación por división de frecuencia y no sólo se utiliza en la radio y la televisión. Por ejemplo, los sistemas de línea de abonado digital asimétrica (ADSL) utilizan este sistema para conectar la red de computadores de casa a Internet.</p>
+
+        <p>Otro método de compartición del acceso en el medio se basa en la distribución de éste por parte de un dispositivo maestro. Por ejemplo, en la tecnología Bluetooth, los dispositivos próximos forman una red llamada piconet. En cada piconet se elige un dispositivo maestro que va preguntando a los demás dispositivos (que hacen las funciones de esclavo) quién debe utilizar el medio. En el caso de que alguien lo necesite, lo tendrá disponible durante cierto tiempo.</p>
+
+        <h2>4.3.2 Redes Conmutadas</h2>
+        <p>Cuando se va a enviar datos a largas distancias, este debe pasar por varios nodos intermedios. Los cuales son los encargados de dirigir los datos para que lleguen a su destino. Por lo cual se hace uso de lo que es una red conmutada. Ya que estas Consisten en un conjunto de nodos interconectados entre sí, a través de medios de transmisión, formando así la mayoría de las veces una topología mallada, donde la información se traslada en el encaminándola del nodo de origen al nodo destino mediante conmutación entre nodos intermedios.</p>
+
+        <p>Una transmisión de este tipo tiene 3 fases:</p>
+        <ol>
+            <li>Establecimiento de la conexión</li>
+            <li>Transferencia de la información</li>
+            <li>Liberación de la conexión</li>
+        </ol>
+
+        <p>En pocas palabras se puede decir que una red conmutada es aquella que permite la comunicación de nodo a nodo a través de su conexión, para facilitar el traslado de información.</p>
+
+        <h2>4.4 Sistemas de memoria distribuida</h2>
+        <p>Los sistemas de memoria distribuida o multicomputadores pueden ser de dos tipos básicos. El primero de ellos consta de un único computador con múltiples CPUs comunicadas por un bus de datos mientras que en el segundo se utilizan múltiples computadores, cada uno con su propio procesador, enlazados por una red de interconexión más o menos rápida.</p>
+
+        <p>Sobre los sistemas de multicomputadores de memoria distribuida, se simula memorias compartidas. Se usan los mecanismos de comunicación y sincronización de sistemas multiprocesadores.</p>
+
+        <p>Un clúster es un tipo de arquitectura paralela distribuida que consiste de un conjunto de computadores independientes interconectados operando de forma conjunta como único recurso computacional sin embargo, cada computador puede utilizarse de forma independiente o separada.</p>
+
+        <p>El tipo más común de clúster es el cluster Beowulf, que es un clúster implementado con múltiples ordenadores comerciales idénticos conectados a una red de área local TCP/IPEthernet. La tecnología Beowulf fue desarrollada originalmente por Thomas Sterling y Donald Becker. La gran mayoría de los superordenadores TOP500 son clústeres. Se aplica a los conjuntos o conglomerados de computadoras construidos mediante la utilización de hardware comunes y que se compartan como si fuesen una única computadora.</p>
+
+        <h3>Características de los clústeres</h3>
+        <p>Los clúster son usualmente empleados para mejorar el rendimiento y la disponibilidad por encima de la que es provista por un solo computador típicamente siendo más económico que computadores individuales de rapidez y disponibilidad comparables. De un clúster se espera que presente combinaciones de los siguientes servicios:</p>
+        <ul>
+            <li>Alto rendimiento</li>
+            <li>Alta disponibilidad</li>
+            <li>Balance de carga</li>
+            <li>Escalabilidad</li>
+        </ul>
+
+        <p>En esta arquitectura, el computador paralelo es esencialmente una colección de procesadores secuenciales, cada uno con su propia memoria local, que pueden trabajar conjuntamente.</p>
+
+        <ul>
+            <li>Cada nodo tiene rápido acceso a su propia memoria y acceso a la memoria de otros nodos mediante una red de comunicaciones, habitualmente una red de comunicaciones de alta velocidad</li>
+            <li>Los datos son intercambiados entre los nodos como mensajes a través de la red</li>
+            <li>Una red de ordenadores, especialmente si disponen de una interconexión de alta velocidad, puede ser vista como un multicomputador de memoria distribuida y como tal ser utilizada para resolver problemas mediante computación paralela</li>
+        </ul>
+
+        <h2>4.5 Casos de estudio</h2>
+
+        <h3>Líneas De Investigación y Desarrollo</h3>
+        <ul>
+            <li>Paralelización de algoritmos secuenciales. Diseño y optimización de algoritmos</li>
+            <li>Arquitecturas multicore y multithreading en multicore</li>
+            <li>Arquitecturas multiprocesador</li>
+            <li>Modelos de representación y predicción de performance de algoritmos paralelos</li>
+            <li>Métricas del paralelismo. Speedup, eficiencia, rendimiento, granularidad, superlinealidad</li>
+            <li>Balance de carga estático y dinámico. Técnicas de balanceo de carga</li>
+            <li>Análisis de los problemas de migración y asignación óptima de procesos y datos a procesadores. Migración dinámica</li>
+            <li>Escalabilidad de algoritmos paralelos en arquitecturas multiprocesador distribuidas</li>
+            <li>Implementación de soluciones sobre diferentes modelos de arquitectura homogéneas y heterogéneas [multicores, clusters, multiclusters y grid]</li>
+            <li>Ajuste del modelo de software al modelo de hardware, a fin de optimizar el sistema paralelo</li>
+            <li>Evaluación de performance</li>
+            <li>Laboratorios remotos para el acceso transparente a recursos de cómputo paralelo</li>
+        </ul>
+
+        <h3>Grandes empresas y sus implementaciones con procesamiento paralelo:</h3>
+        <ul>
+            <li><b>NVIDIA</b>
+                <ul>
+                    <li>PVSICS LAYER:
+                        <ul>
+                            <li>GPU PhysX</li>
+                            <li>CPU PhysX</li>
+                        </ul>
+                    </li>
+                    <li>Graphics Layer:
+                        <ul>
+                            <li>GPU –DirectX Windows</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>AMD</b>
+                <ul>
+                    <li>PVSICS LAYER:
+                        <ul>
+                            <li>No GPU PhysX</li>
+                            <li>CPU Havok</li>
+                        </ul>
+                    </li>
+                    <li>Graphics Layer:
+                        <ul>
+                            <li>GPU –DirectX Windows</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><b>INTEL</b>
+                <ul>
+                    <li>PVSICS LAYER:
+                        <ul>
+                            <li>No GPU PhysX</li>
+                            <li>CPU Havok</li>
+                        </ul>
+                    </li>
+                    <li>Graphics Layer:
+                        <ul>
+                            <li>GPU –DirectX Windows</li>
+                            <li>U –DirectX Windows</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <hr width="100%" size="5" color="#060270">
+
+
+    <a href="index.html" class="btn">Regresar</a>
+
+</body>
+</html>
